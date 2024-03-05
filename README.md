@@ -12,7 +12,7 @@ Here is a list of currently supported ArgoCD Application and the respective Red 
 
 Component diagram of this solution looks like this:
 
-![Component diagram](showcase-gitops.png)
+![Component diagram](showcase-gitops-1.png)
 
 # Usage
 

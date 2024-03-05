@@ -32,6 +32,10 @@ cd install/
 
 ## Troubleshooting
 
+Despite ArgoCD being awesome, it's still a software written by human beings, thus riddled with bugs. This section describes the typical troubleshooting scenarios I have encountered while working on this solution.
+
+### Parent App Error State
+
 If the parent app ends up in error state as shown below:
 
 ![Error ArgoCD](images/argo-error.png)
@@ -39,6 +43,30 @@ If the parent app ends up in error state as shown below:
 You need to click `Refresh`. This will fix the error state and the parent application will be properly reconciled.
 
 ![OK ArgoCD](images/argo-ok.png)
+
+
+### Customer Resources not visible in the ArgoCD UI
+
+If the operator custom resources are not visible in the ArgoCD UI despite them being added in the [Resource Inclusion](argo-apps/rbac/argocd-policy-patch.yaml) you need to delete few gitops pods
+
+Before deleting pod:
+
+![No resources](images/custom-resources-missing.png)
+
+Delete the pods by executing following command:
+
+```bash
+oc get pods -n openshift-gitops | grep gitops-server
+oc delete pod <GITOPS_SERVER_POD_NAME> -n openshift-gitops
+oc get pods -n openshift-gitops | grep redis
+oc delete pod <REDIS_POD_NAME> -n openshift-gitops
+```
+
+Afte deleting pod:
+![Resources present](images/custom-resources-present.png)
+
+
+
 
 
 

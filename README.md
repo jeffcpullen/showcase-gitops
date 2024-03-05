@@ -12,9 +12,9 @@ Here is a list of currently supported ArgoCD Application and the respective Red 
 
 Component diagram of this solution looks like this:
 
-![Component diagram](showcase-gitops-1.png)
+![Component diagram](images/showcase-gitops-1.png)
 
-# Usage
+## Usage
 
  - Configure what ArgoCD Application you want to enable in [parent application](argo-apps/tooling-app-of-apps/values.yaml)
  - If you want to use RHTAS, make sure to fix [argo-apps/rhtas-install/values.yaml](argo-apps/rhtas-install/values.yaml) so it fits your cluster
@@ -29,4 +29,16 @@ cd install/
   oc get route openshift-gitops-server -n openshift-gitops -o jsonpath='{.spec.host}{"\n"}'
   ```
  - Use `admin` username and password which you passed to the install script
+
+## Troubleshooting
+
+If the parent app ends up in error state as shown below:
+
+![Error ArgoCD](images/argo-error.png)
+
+You need to click `Refresh`. This will fix the error state and the parent application will be properly reconciled.
+
+![OK ArgoCD](images/argo-ok.png)
+
+
 

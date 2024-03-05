@@ -24,6 +24,9 @@ Component diagram of this solution looks like this:
 cd install/
 ./install.sh -p <ARGO_CD_ADMIN_PASSWORD>
 ```
- - Once the command finishes, you can log in to the ArgoCD Console to observe the installation progress. You can locate the ArgoCD Server URL via `oc get route argocd-server -n openshift-gitops -o jsonpath='{.spec.host}{"\n"}'`
+ - Once the command finishes, you can log in to the ArgoCD Console to observe the installation progress. You can locate the ArgoCD Server URL via:
+  ```bash
+  oc get route argocd-server -n openshift-gitops -o jsonpath='{.spec.host}{"\n"}'
+  ```
  - Use `admin` username and password which you passed to the install script
 

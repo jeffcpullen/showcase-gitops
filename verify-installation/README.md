@@ -1,4 +1,4 @@
-### Verification 1 - cosign
+### RHTAS Verification - cosign
 
 ```bash
 oc project rhtas-system

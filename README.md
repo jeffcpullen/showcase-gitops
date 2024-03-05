@@ -6,7 +6,7 @@ Here is a list of currently supported ArgoCD Application and the respective Red 
 
  - Red Hat OpenShift Dev Spaces
  - Red Hat Trusted Artifact Signer (RHTAS)
- - Namespace Config Operator (Community support only)
+ - Namespace Config Operator (Community support only, integrated with Dev Spaces)
  - Red Hat Single Sign On (integrated with RHTAS)
  - ArgoCD RBAC - this is to prevent fixing ArgoCD with `cluster-admin` permissions and allow more fine grained permissions.
 

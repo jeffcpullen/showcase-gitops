@@ -26,7 +26,7 @@ cd install/
 ```
  - Once the command finishes, you can log in to the ArgoCD Console to observe the installation progress. You can locate the ArgoCD Server URL via:
   ```bash
-  oc get route argocd-server -n openshift-gitops -o jsonpath='{.spec.host}{"\n"}'
+  oc get route openshift-gitops-server -n openshift-gitops -o jsonpath='{.spec.host}{"\n"}'
   ```
  - Use `admin` username and password which you passed to the install script
 

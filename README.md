@@ -2,7 +2,7 @@
 
 This repository helps to get quickly up and running with selected Red Hat products. It's not meant to be used in production-like environments, but mostly for demo purposes.
 
-Here is a list of currently supported ArgoCD Application and the respective Red Hat products which they installs:
+Here is a list of currently supported ArgoCD Application and the respective Red Hat products which they install:
 
  - Red Hat OpenShift Dev Spaces
  - Red Hat Trusted Artifact Signer (RHTAS)

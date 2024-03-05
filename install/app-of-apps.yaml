@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: showcase-gitops-parent
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: openshift-gitops
+    server: https://kubernetes.default.svc
+  project: showcase-gitops
+  source:
+    path: argo-apps/tooling-app-of-apps
+    repoURL: https://github.com/agiertli/showcase-gitops.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      selfHeal: true

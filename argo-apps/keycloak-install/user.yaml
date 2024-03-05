@@ -1,0 +1,69 @@
+---
+apiVersion: keycloak.org/v1alpha1
+kind: KeycloakUser
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/sync-wave: "3"
+  labels:
+    app: sso
+  name: jdoe
+spec:
+  realmSelector:
+    matchLabels:
+      app: sso
+  user:
+    email: jdoe@redhat.com
+    enabled: true
+    emailVerified: true
+    credentials:
+      - type: "password"
+        value: "secure"
+    firstName: Jane
+    lastName: Doe
+    username: jdoe
+---
+apiVersion: keycloak.org/v1alpha1
+kind: KeycloakUser
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/sync-wave: "3"
+  labels:
+    app: sso
+  name: somalley
+spec:
+  realmSelector:
+    matchLabels:
+      app: sso
+  user:
+    email: somalley@redhat.com
+    enabled: true
+    emailVerified: true
+    firstName: Sally
+    lastName: OMalley
+    username: somalley
+---
+apiVersion: keycloak.org/v1alpha1
+kind: KeycloakUser
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/sync-wave: "3"
+  labels:
+    app: sso
+  name: agiertli
+spec:
+  realmSelector:
+    matchLabels:
+      app: sso
+  user:
+    credentials:
+      - type: password
+        value: password1!
+    email: agiertli@redhat.com
+    emailVerified: true
+    enabled: true
+    firstName: Anton
+    lastName: Giertli
+    username: agiertli

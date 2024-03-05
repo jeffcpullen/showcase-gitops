@@ -1,0 +1,37 @@
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://github.com/agiertli/showcase-gitops.git
+    targetRevision: HEAD
+argo:
+  namespace: openshift-gitops
+  destination: tooling
+  project: rhtas-project      
+
+applications:
+   - name: argocd-rbac
+     path: rbac
+     destination: openshift-gitops
+     enabled: true
+
+   - name: keycloak-install
+     path: keycloak-install
+     destination: keycloak-system
+     enabled: true
+
+   - name: rhtas-install
+     path: rhtas-install
+     destination: rhtas-system
+     enabled: true
+
+  - name: devspaces-install
+    path: devspaces-install
+    destination: devspaces
+    enabled: true
+     
+   - name: namespace-config
+     path: namespace-operator
+     destination: namespace-config-operator 
+     enabled: true
+    

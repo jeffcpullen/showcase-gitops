@@ -1,0 +1,39 @@
+---
+kind: Securesign
+apiVersion: rhtas.redhat.com/v1alpha1
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/sync-wave: "3"
+  labels:
+    app.kubernetes.io/instance: securesign-sample
+    app.kubernetes.io/name: securesign-sample
+    app.kubernetes.io/part-of: trusted-artifact-signer
+  name: securesign-sample
+  namespace: rhtas-system
+spec:
+  ctlog: null
+  fulcio:
+    certificate:
+      commonName: fulcio.hostname
+      organizationEmail: jdoe@redhat.com
+      organizationName: Red Hat
+    config:
+      OIDCIssuers:
+        'https://keycloak-keycloak-system.apps.{{ $.Values.baseDomain }}/auth/realms/sigstore':
+          ClientID: sigstore
+          IssuerURL: 'https://keycloak-keycloak-system.apps.{{ $.Values.baseDomain }}/auth/realms/sigstore'
+          Type: email
+    externalAccess:
+      enabled: true
+    monitoring: false
+  rekor:
+    externalAccess:
+      enabled: true
+    monitoring: false
+  trillian:
+    database:
+      create: true
+  tuf:
+    externalAccess:
+      enabled: true

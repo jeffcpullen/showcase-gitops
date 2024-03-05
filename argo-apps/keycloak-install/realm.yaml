@@ -1,0 +1,19 @@
+apiVersion: keycloak.org/v1alpha1
+kind: KeycloakRealm
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/sync-wave: "3"
+  labels:
+    app: sso
+  name: sigstore
+spec:
+  instanceSelector:
+    matchLabels:
+      app: sso
+  realm:
+    displayName: Sigstore
+    enabled: true
+    id: sigstore
+    realm: sigstore
+    sslRequired: none

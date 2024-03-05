@@ -1,0 +1,57 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ArgoCD
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: ServerSideApply=true
+  name: openshift-gitops
+spec:
+  server:
+    route:
+      enabled: true
+      tls:
+        insecureEdgeTerminationPolicy: Redirect
+        termination: reencrypt
+  resourceInclusions: |   
+    - apiGroups:
+      - "*"
+      kinds:
+      - Securesign
+      - Fulcio
+      - Rekor
+      - Tuf
+      - Trillian
+      - CTlog
+      - KeycloakUser
+      - Keycloak
+      - KeycloakClient
+      - KeycloakRealm
+      - ArgoCD
+      - Application
+      - AppProject
+      - ConfigMap
+      - ClusterRoleBinding
+      - ClusterRole
+      - DevWorkspaceOperatorConfig
+      - Subscription
+      - Namespace
+      - OperatorGroup
+      - Group
+      - NamespaceConfig
+      - CheCluster
+      - NexusRepo
+      clusters:
+      - "*"        
+  rbac:    
+        defaultPolicy: 'role:none'
+        policy: |
+          p, role:none, applications, get, */*, deny
+          p, role:none, certificates, get, *, deny
+          p, role:none, clusters, get, *, deny
+          p, role:none, repositories, get, *, deny
+          p, role:none, projects, get, *, deny
+          p, role:none, accounts, get, *, deny
+          p, role:none, gpgkeys, get, *, deny
+          g, system:cluster-admins, role:admin
+          g, cluster-admins, role:admin
+          g, argocdadmins, role:admin
+        scopes: "[accounts,groups]"

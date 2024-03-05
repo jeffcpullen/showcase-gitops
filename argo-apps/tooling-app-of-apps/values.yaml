@@ -7,9 +7,10 @@ spec:
 argo:
   namespace: openshift-gitops
   destination: tooling
-  project: rhtas-project      
+  project: showcase-gitops    
 
 applications:
+
    - name: argocd-rbac
      path: rbac
      destination: openshift-gitops
@@ -25,10 +26,10 @@ applications:
      destination: rhtas-system
      enabled: true
 
-  - name: devspaces-install
-    path: devspaces-install
-    destination: devspaces
-    enabled: true
+   - name: devspaces-install
+     path: devspaces-install
+     destination: devspaces
+     enabled: true
      
    - name: namespace-config
      path: namespace-operator

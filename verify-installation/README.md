@@ -52,7 +52,7 @@ git config --local gitsign.fulcio $SIGSTORE_FULCIO_URL
 git config --local gitsign.rekor $SIGSTORE_REKOR_URL
 git config --local gitsign.issuer $SIGSTORE_OIDC_ISSUER
 
-git commit --allow-empty -S -m “Test of a signed commit”
+git commit --allow-empty -S -m "Test of a signed commit"
 
 cosign initialize
 

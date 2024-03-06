@@ -35,4 +35,9 @@ applications:
      path: namespace-operator
      destination: namespace-config-operator 
      enabled: true
+
+   - name: openshift-pipelines
+     path: tekton-install
+     destination: openshift-pipelines
+     enabled: true     
     

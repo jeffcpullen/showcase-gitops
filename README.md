@@ -4,6 +4,7 @@ This repository helps to get quickly up and running with selected Red Hat produc
 
 Here is a list of currently supported ArgoCD Application and the respective Red Hat products which they install:
 
+ - Red Hat OpenShift Pipelines 
  - Red Hat OpenShift Dev Spaces
  - Red Hat Trusted Artifact Signer (RHTAS)
  - Namespace Config Operator (Community support only, integrated with Dev Spaces)

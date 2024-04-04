@@ -1,0 +1,11 @@
+{{- range $key := .Values.users }}
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"    
+  labels:
+    kubernetes.io/metadata.name: {{.name}}-dev
+  name: {{.name}}-dev
+{{- end }}

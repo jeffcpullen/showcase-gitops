@@ -29,7 +29,7 @@ echo "Waiting until ArgoCD CR is ready..."
 sleep 5
 done
 oc -n $ARGOCD_NAMESPACE patch secret $ARGOCD_CR_NAME-cluster --patch "{\"stringData\": {\"admin.password\": \"$ARGOCD_ADMIN_PASSWORD\"}}"
-
+oc -n $ARGOCD_NAMESPACE patch secret argocd-secret --patch "{\"data\": {\"admin.password\": null}}"
 oc new-project ${ARGOCD_TOOLING_NAMESPACE}
 
 echo "Creating ArgoCD Project ${ARGOCD_PROJECT_NAME}"

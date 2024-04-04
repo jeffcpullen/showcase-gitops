@@ -41,3 +41,7 @@ applications:
      destination: openshift-pipelines
      enabled: true     
     
+   - name: workshop
+     path: workshop-setup
+     destination: openshift-gitops
+     enabled: true    

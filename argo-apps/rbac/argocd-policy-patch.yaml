@@ -39,6 +39,7 @@ spec:
       - NamespaceConfig
       - CheCluster
       - NexusRepo
+      - RoleBinding
       clusters:
       - "*"        
   rbac:    

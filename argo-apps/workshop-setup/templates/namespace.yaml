@@ -7,5 +7,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "-1"    
   labels:
     kubernetes.io/metadata.name: {{.name}}-dev
+    app.kubernetes.io/part-of: che.eclipse.org
+    app.kubernetes.io/component: workspaces-namespace    
   name: {{.name}}-dev
 {{- end }}

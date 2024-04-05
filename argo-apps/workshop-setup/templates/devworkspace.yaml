@@ -4,7 +4,7 @@
 kind: DevWorkspace
 apiVersion: workspace.devfile.io/v1alpha2
 metadata:
-  name: superheroes-workshop
+  name: superheroes-workshop-seeded
   namespace: {{.name}}-dev
 spec:
   routingClass: che

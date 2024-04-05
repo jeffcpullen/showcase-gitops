@@ -1,5 +1,6 @@
 {{- range $key := .Values.users }}
 {{ if .seed }}
+---
 kind: DevWorkspace
 apiVersion: workspace.devfile.io/v1alpha2
 metadata:

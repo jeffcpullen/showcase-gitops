@@ -1,1 +1,1 @@
-./execute-in-pods.sh "controller.devfile.io/devworkspace_name=superheroes-workshop" "mvn clean install -Pcomplete -DskipTests -f /projects/superheroes-workshop/quarkus-workshop-super-heroes/pom.xml"
+./execute-in-pods.sh "controller.devfile.io/devworkspace_name=superheroes-workshop-seeded" "mvn clean install -Pcomplete -DskipTests -f /projects/superheroes-workshop/quarkus-workshop-super-heroes/pom.xml"

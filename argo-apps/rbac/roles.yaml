@@ -38,5 +38,7 @@ rules:
   - controller.devfile.io
   resources:
   - devworkspaceoperatorconfigs
+  - devworkspace
+  - devworkspaces
   verbs:
   - '*'          

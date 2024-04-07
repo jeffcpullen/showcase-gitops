@@ -6,6 +6,8 @@ apiVersion: workspace.devfile.io/v1alpha2
 metadata:
   name: superheroes-workshop-seeded
   namespace: {{.name}}-dev
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
 spec:
   routingClass: che
   started: true
@@ -30,6 +32,8 @@ spec:
           cpuLimit: "2"
           cpuRequest: 200m
           env:
+            - name: KUBEDOCK_PARAMS
+              value: "--reverse-proxy --kubeconfig /home/user/.kube/config --initimage quay.io/agiertli/kubedock:0.13.0"
             - name: USE_JAVA17
               value: "true"
             - value: -Xmx4G -Xss128M -XX:MetaspaceSize=1G -XX:MaxMetaspaceSize=2G

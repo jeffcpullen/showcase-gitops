@@ -48,24 +48,24 @@ spec:
               value: 'true'          
           endpoints:
             - exposure: none
-              name: kubedock
+              name: kubedock-seeded
               protocol: tcp
               targetPort: 2475      
             - exposure: public
-              name: http-booster
+              name: http-booster-seeded
               protocol: http
               targetPort: 8080
               attributes:
                 discoverable: true
                 urlRewriteSupported: true
             - exposure: internal
-              name: debug
+              name: debug-seeded
               protocol: http
               targetPort: 5005
           volumeMounts:
-            - name: m2
+            - name: m2-seeded
               path: /home/user/.m2
-      - name: m2
+      - name: m2-seeded
         volume:
           size: 10G
     commands:

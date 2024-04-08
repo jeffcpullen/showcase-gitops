@@ -15,8 +15,6 @@ spec:
     - name: ide
       uri: https://devspaces.{{ $.Values.baseDomain}}/plugin-registry/v3/plugins/che-incubator/che-code/latest/devfile.yaml
   template:
-    attributes: 
-      controller.devfile.io/scc: container-build
     projects:
       - name: superheroes-workshop-seeded
         git:

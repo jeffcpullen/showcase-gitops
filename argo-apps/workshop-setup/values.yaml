@@ -72,4 +72,4 @@ users:
  - name: admin
    seed: true
 
-baseDomain: apps.cluster-zmzgh.dynamic.redhatworkshops.io
+baseDomain: apps.cluster-xpcdn.dynamic.redhatworkshops.io

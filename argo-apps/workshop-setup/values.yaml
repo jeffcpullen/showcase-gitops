@@ -10,15 +10,15 @@ users:
  - name: user5
    seed: true
  - name: user6
-   seed: false
+   seed: true
  - name: user7
-   seed: false
+   seed: true
  - name: user8
-   seed: false
+   seed: true
  - name: user9
-   seed: false
+   seed: true
  - name: user10
-   seed: false
+   seed: true
  - name: user11
    seed: false
  - name: user12
@@ -72,4 +72,4 @@ users:
  - name: admin
    seed: true
 
-baseDomain: apps.cluster-xpcdn.dynamic.redhatworkshops.io
+baseDomain: apps.cluster-stsmq.dynamic.redhatworkshops.io

@@ -69,6 +69,16 @@ users:
    seed: false
  - name: user35
    seed: false
+ - name: user36
+   seed: false
+ - name: user37
+   seed: false
+ - name: user38
+   seed: false 
+ - name: user39
+   seed: false 
+ - name: user40
+   seed: true      
  - name: admin
    seed: true
 

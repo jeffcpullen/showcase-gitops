@@ -1,0 +1,11 @@
+#!/bin/bash
+
+readonly COMMAND="${@: -1}"
+
+if [ "$COMMAND" == "up" ]; then
+    # docker-compose for up
+    ~/.local/bin/docker-compose "$@"
+elif [ "$COMMAND" == "down" ]; then
+    # podman-compose for down
+    ~/.local/bin/podman-compose-orig "$@"
+fi

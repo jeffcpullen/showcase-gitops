@@ -23,8 +23,14 @@ docker login -u=$USER -p="PASSWORD" quay.io
 docker build -t cosign-test-docker-$(date +%m-%d) . -f Containerfile
 docker tag cosign-test-docker-$(date +%m-%d) quay.io/$USER/cosign-test-docker-$(date +%m-%d)
 docker push  quay.io/$USER/cosign-test-docker-$(date +%m-%d)
+
+# OR
+podman build -t cosign-test-docker-$(date +%m-%d) . -f Containerfile
+podman tag cosign-test-docker-$(date +%m-%d) quay.io/$USER/cosign-test-docker-$(date +%m-%d)
+podman push   -f v2s2 quay.io/$USER/cosign-test-docker-$(date +%m-%d)
+
 cosign sign -y quay.io/$USER/cosign-test-docker-$(date +%m-%d)
-cosign verify --certificate-identity=<YOUR_EMAIL> quay.io/$USER/cosign-test-docker-$(date +%m-%d)
+cosign verify --certificate-identity=agiertli@redhat.com quay.io/$USER/cosign-test-docker-$(date +%m-%d)
 ```
 
 ## RHTAS Verification - gitsign

@@ -5,6 +5,13 @@ metadata:
   name: custom-argocd-role
 rules:
 - apiGroups: 
+   - .rhtas.redhat.com
+  resources: 
+    - securesign
+  verbs: 
+   - '*'
+
+- apiGroups: 
    - keycloak.org
   resources: 
     - keycloaks

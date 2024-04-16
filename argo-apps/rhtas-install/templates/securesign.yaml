@@ -19,11 +19,15 @@ spec:
       organizationEmail: agiertli@redhat.com
       organizationName: Red Hat
     config:
-      OIDCIssuers:
-        - Issuer: 'https://keycloak-keycloak-system.apps.{{ $.Values.baseDomain }}/auth/realms/sigstore'
-          ClientID: sigstore
-          IssuerURL: 'https://keycloak-keycloak-system.apps.{{ $.Values.baseDomain }}/auth/realms/sigstore'
-          Type: email
+        MetaIssuers:
+          - Issuer: 'https://keycloack.keycloak-system.app.*.dynamic.redhatworkshops.io/auth/realms/sigstore'
+            ClientID: sigstore
+            Type: email     
+        OIDCIssuers:
+          - Issuer: 'dummy'
+            ClientID: dummy
+            IssuerURL: 'dummy'
+            Type: email
     externalAccess:
       enabled: true
     monitoring: 

@@ -26,11 +26,13 @@ spec:
           Type: email
     externalAccess:
       enabled: true
-    monitoring: false
+    monitoring: 
+      enabled: true
   rekor:
     externalAccess:
       enabled: true
-    monitoring: false
+    monitoring: 
+      enabled: true
   trillian:
     database:
       create: true

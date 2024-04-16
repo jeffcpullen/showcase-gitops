@@ -16,11 +16,11 @@ spec:
   fulcio:
     certificate:
       commonName: fulcio.hostname
-      organizationEmail: jdoe@redhat.com
+      organizationEmail: agiertli@redhat.com
       organizationName: Red Hat
     config:
       OIDCIssuers:
-        'https://keycloak-keycloak-system.apps.{{ $.Values.baseDomain }}/auth/realms/sigstore':
+        - Issuer: 'https://keycloak-keycloak-system.apps.{{ $.Values.baseDomain }}/auth/realms/sigstore'
           ClientID: sigstore
           IssuerURL: 'https://keycloak-keycloak-system.apps.{{ $.Values.baseDomain }}/auth/realms/sigstore'
           Type: email

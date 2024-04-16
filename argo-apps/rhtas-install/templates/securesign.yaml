@@ -22,7 +22,7 @@ spec:
       OIDCIssuers:
         - Issuer: 'http://keycloak-http.keycloak-system.svc.cluster.local:8080/auth/realms/sigstore'
           ClientID: sigstore
-          IssuerURL: 'http://keycloak-http.keycloak-system.svc.cluster.local8080/auth/realms/sigstore'
+          IssuerURL: 'http://keycloak-http.keycloak-system.svc.cluster.local:8080/auth/realms/sigstore'
           Type: email
     externalAccess:
       enabled: true

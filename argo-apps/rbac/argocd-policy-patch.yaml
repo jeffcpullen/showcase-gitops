@@ -41,6 +41,7 @@ spec:
       - NexusRepo
       - RoleBinding
       - DevWorkspace
+      - Service
       clusters:
       - "*"        
   rbac:    

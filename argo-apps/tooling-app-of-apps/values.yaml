@@ -29,12 +29,12 @@ applications:
    - name: devspaces-install
      path: devspaces-install
      destination: devspaces
-     enabled: true
+     enabled: false
      
    - name: namespace-config
      path: namespace-operator
      destination: namespace-config-operator 
-     enabled: true
+     enabled: false
 
    - name: openshift-pipelines
      path: tekton-install
@@ -44,4 +44,4 @@ applications:
    - name: workshop
      path: workshop-setup
      destination: openshift-gitops
-     enabled: true    
+     enabled: false    

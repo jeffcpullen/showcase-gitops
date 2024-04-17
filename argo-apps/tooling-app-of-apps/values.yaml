@@ -29,7 +29,7 @@ applications:
    - name: devspaces-install
      path: devspaces-install
      destination: devspaces
-     enabled: false
+     enabled: true
      
    - name: namespace-config
      path: namespace-operator

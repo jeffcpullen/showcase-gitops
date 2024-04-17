@@ -24,7 +24,7 @@ spec:
       deployment:
         containers:
           - image: 'quay.io/rhn-gps-mthirion/pluginregistry-rhel8:3.12c'
-	    imagePullPolicy: Always
+      imagePullPolicy: Always
       openVSXURL: ''
   containerRegistry: {}
   devEnvironments:

@@ -21,11 +21,7 @@ spec:
     metrics:
       enable: true
     pluginRegistry:
-      deployment:
-        containers:
-          - image: 'quay.io/rhn-gps-mthirion/pluginregistry-rhel8:3.12c'
-      imagePullPolicy: Always
-      openVSXURL: ''
+      openVSXURL: "https://open-vsx.org"
   containerRegistry: {}
   devEnvironments:
     disableContainerBuildCapabilities: false

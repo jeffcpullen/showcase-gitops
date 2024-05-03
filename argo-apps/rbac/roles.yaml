@@ -5,12 +5,17 @@ metadata:
   name: custom-argocd-role
 rules:
 - apiGroups: 
+   - kafka.strimzi.io
+  resources: 
+    - kafka
+  verbs: 
+   - '*'
+- apiGroups: 
    - .rhtas.redhat.com
   resources: 
     - securesign
   verbs: 
    - '*'
-
 - apiGroups: 
    - keycloak.org
   resources: 

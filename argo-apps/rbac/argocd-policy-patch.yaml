@@ -15,6 +15,7 @@ spec:
     - apiGroups:
       - "*"
       kinds:
+      - Kafka
       - Securesign
       - Fulcio
       - Rekor

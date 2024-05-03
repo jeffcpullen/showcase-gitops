@@ -1,3 +1,4 @@
+---
 apiVersion: kafka.strimzi.io/v1beta2
 kind: Kafka
 metadata:
@@ -7,7 +8,41 @@ metadata:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
     argocd.argoproj.io/sync-wave: "2"
 spec:
+  entityOperator:
+    tlsSidecar:
+      resources:
+        requests:
+          memory: 128Mi
+          cpu: "0.1"
+        limits:
+          memory: 256Mi
+          cpu: "0.2"  
+    topicOperator:
+      resources:
+        requests:
+          memory: 128Mi
+          cpu: "0.1"
+        limits:
+          memory: 256Mi
+          cpu: "0.2"
+    userOperator:
+      resources:
+        requests:
+          memory: 128Mi
+          cpu: "0.1"
+        limits:
+          memory: 256Mi
+          cpu: "0.2"
   kafka:
+    resources:
+      limits:
+        cpu: 200m
+        memory: 800Mi
+        ephemeral-storage: 551Mi
+      requests:
+        cpu: 100m
+        memory: 521Mi
+        ephemeral-storage: 521Mi  
     config:
       offsets.topic.replication.factor: 3
       transaction.state.log.replication.factor: 3
@@ -32,10 +67,16 @@ spec:
         type: route
     version: 3.6.0
     replicas: 3
-  entityOperator:
-    topicOperator: {}
-    userOperator: {}
   zookeeper:
+    resources:
+      limits:
+        cpu: 200m
+        memory: 400Mi
+        ephemeral-storage: 256Mi
+      requests:
+        cpu: 100m
+        memory: 256Mi
+        ephemeral-storage: 256Mi  
     storage:
       type: ephemeral
     replicas: 3

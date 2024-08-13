@@ -18,17 +18,17 @@ spec:
     cheServer:
       debug: false
       logLevel: INFO
-      # clusterRoles:
-      #   - customrole
+      clusterRoles:
+        - customrole
     metrics:
       enable: true
     pluginRegistry:
       openVSXURL: "https://open-vsx.org"
   containerRegistry: {}
   devEnvironments:
-    # user:
-    #   clusterRoles:
-    #     - customrole
+    user:
+      clusterRoles:
+        - customrole
     disableContainerBuildCapabilities: false
     gatewayContainer:
       resources:

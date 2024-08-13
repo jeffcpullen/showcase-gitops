@@ -14,7 +14,7 @@ spec:
     server: {{ $.Values.spec.destination.server }}
   project: {{ $.Values.argo.project }}
   source:
-    path: argo-apps/{{ $.Values.argo.namespace }}/{{ .path }}
+    path: argo-apps/{{ .path }}
     repoURL: {{ $.Values.spec.source.repoURL }}
     targetRevision: {{ $.Values.spec.source.targetRevision }}
   syncPolicy:

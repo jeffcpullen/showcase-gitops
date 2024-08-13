@@ -42,6 +42,7 @@ spec:
     startTimeoutSeconds: 1200
     defaultNamespace:
       template: <username>-dev
+      autoProvision: true
     secondsOfInactivityBeforeIdling: -1
     storage:
       perWorkspaceStrategyPvcConfig:

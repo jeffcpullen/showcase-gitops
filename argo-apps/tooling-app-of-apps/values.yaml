@@ -14,22 +14,22 @@ applications:
    - name: argocd-rbac
      path: rbac
      destination: openshift-gitops
-     enabled: true
+     enabled: false
 
    - name: keycloak-install
      path: keycloak-install
      destination: keycloak-system
-     enabled: true
+     enabled: false
 
    - name: rhtas-install
      path: rhtas-install
      destination: rhtas-system
-     enabled: true
+     enabled: false
 
    - name: devspaces-install
      path: devspaces-install
      destination: devspaces
-     enabled: true
+     enabled: false
      
    - name: namespace-config
      path: namespace-operator
@@ -39,7 +39,7 @@ applications:
    - name: openshift-pipelines
      path: tekton-install
      destination: openshift-pipelines
-     enabled: true     
+     enabled: false     
     
    - name: workshop
      path: workshop-setup

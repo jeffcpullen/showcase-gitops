@@ -20,6 +20,7 @@ spec:
       logLevel: INFO
       clusterRoles:
         - customrole
+        - devspaces-user-container-build
     metrics:
       enable: true
     pluginRegistry:

@@ -1,0 +1,86 @@
+---
+apiVersion: v1
+data:
+  init-java8-truststore.sh: |
+    #!/usr/bin/env bash
+    keytool -importcert -noprompt -file /public-certs/custom-ca-certificates.custom-ca-certificates.pem -trustcacerts -keystore ~/.java/current/lib/security/cacerts -storepass changeit
+kind: ConfigMap
+metadata:
+  annotations:
+    che.eclipse.org/mount-as: subpath
+    che.eclipse.org/mount-path: /home/user/
+  labels:
+    app.kubernetes.io/part-of: che.eclipse.org
+    app.kubernetes.io/component: devspaces-configmap
+  name: init-truststore
+  namespace: devspaces
+  --- 
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  namespace: devspaces
+  name: settings-xml
+  annotations:
+    che.eclipse.org/mount-as: subpath
+    che.eclipse.org/mount-path: /home/user/.m2
+  labels: 
+    app.kubernetes.io/part-of: che.eclipse.org
+    app.kubernetes.io/component: devspaces-configmap
+data:
+  settings.xml: |
+    <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+      <localRepository />
+      <interactiveMode />
+      <offline />
+      <pluginGroups />
+      <mirrors />
+      <proxies />
+      <profiles>
+          <profile>
+            <id>redhat</id>
+            <repositories>
+                <repository>
+                  <id>rh-ga</id>
+                  <name>Red Hat public maven repo</name>
+                  <url>https://maven.repository.redhat.com/ga/</url>
+                  <releases>
+                      <enabled>true</enabled>
+                      <updatePolicy>never</updatePolicy>
+                  </releases>
+                  <snapshots>
+                      <enabled>false</enabled>
+                  </snapshots>
+                </repository>
+                <repository>
+                  <id>jenkins-ga</id>
+                  <name>jenkins repo</name>
+                  <url>https://repo.jenkins-ci.org/releases/</url>
+                  <releases>
+                      <enabled>true</enabled>
+                      <updatePolicy>never</updatePolicy>
+                  </releases>
+                  <snapshots>
+                      <enabled>false</enabled>
+                  </snapshots>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                  <id>rh-ga</id>
+                  <name>Red Hat public maven repo</name>
+                  <url>https://maven.repository.redhat.com/ga</url>
+                  <releases>
+                      <enabled>true</enabled>
+                      <updatePolicy>never</updatePolicy>
+                  </releases>
+                  <snapshots>
+                      <enabled>false</enabled>
+                  </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+          </profile>
+      </profiles>
+      <activeProfiles>
+          <activeProfile>redhat</activeProfile>
+      </activeProfiles>
+    </settings>

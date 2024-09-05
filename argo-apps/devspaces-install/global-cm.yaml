@@ -7,11 +7,11 @@ data:
 kind: ConfigMap
 metadata:
   annotations:
-    che.eclipse.org/mount-as: subpath
-    che.eclipse.org/mount-path: /home/user/
+    controller.devfile.io/mount-as: subpath
+    controller.devfile.io/mount-path: /home/user/
   labels:
     app.kubernetes.io/part-of: che.eclipse.org
-    app.kubernetes.io/component: devspaces-configmap
+    app.kubernetes.io/component: workspaces-config
   name: init-truststore
   namespace: devspaces
 --- 
@@ -21,11 +21,11 @@ metadata:
   namespace: devspaces
   name: settings-xml
   annotations:
-    che.eclipse.org/mount-as: subpath
-    che.eclipse.org/mount-path: /home/user/.m2
+    controller.devfile.io/mount-as: subpath
+    controller.devfile.io/mount-path: /home/user/.m2
   labels: 
     app.kubernetes.io/part-of: che.eclipse.org
-    app.kubernetes.io/component: devspaces-configmap
+    app.kubernetes.io/component: workspaces-config
 data:
   settings.xml: |
     <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">

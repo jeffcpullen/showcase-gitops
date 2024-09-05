@@ -14,7 +14,7 @@ metadata:
     app.kubernetes.io/component: devspaces-configmap
   name: init-truststore
   namespace: devspaces
-  --- 
+--- 
 kind: ConfigMap
 apiVersion: v1
 metadata:

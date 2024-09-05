@@ -68,7 +68,7 @@ data:
             </pluginRepositories>
           </profile>
       </profiles>
-      <activeProfiles>
-          <activeProfile>redhat</activeProfile>
-      </activeProfiles>
+      <!-- <activeProfiles>
+           <activeProfile>redhat</activeProfile>
+       </activeProfiles> -->
     </settings>

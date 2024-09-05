@@ -19,7 +19,7 @@ spec:
       debug: false
       logLevel: INFO
       clusterRoles:
-        - customrole
+        - customrole-devspaces
         - devspaces-user-container-build
     metrics:
       enable: true

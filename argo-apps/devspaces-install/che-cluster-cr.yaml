@@ -20,7 +20,6 @@ spec:
       logLevel: INFO
       clusterRoles:
         - customrole-devspaces
-        - devspaces-user-container-build
     metrics:
       enable: true
     pluginRegistry:
@@ -29,7 +28,7 @@ spec:
   devEnvironments:
     user:
       clusterRoles:
-        - customrole
+        - customrole-devspaces
     disableContainerBuildCapabilities: false
     gatewayContainer:
       resources:

@@ -6,11 +6,10 @@ metadata:
   namespace: devspaces
 spec:
   channel: fast
-  installPlanApproval: Manual
+  installPlanApproval: Automatic
   name: devworkspace-operator
   source: redhat-operators
   sourceNamespace: openshift-marketplace
-  startingCSV: devworkspace-operator.v0.29.0
 ---
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
@@ -21,8 +20,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "1"
 spec:
   channel: stable
-  installPlanApproval: Manual
+  installPlanApproval: Automatic
   source: redhat-operators
   sourceNamespace: openshift-marketplace
   name: devspaces
-  startingCSV: devspacesoperator.v3.14.0
